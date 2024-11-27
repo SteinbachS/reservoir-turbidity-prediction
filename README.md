@@ -20,14 +20,13 @@ The required Python libraries are installed via the Conda environment (see below
 1. Install Anaconda, c.f. [here](https://docs.anaconda.com/anaconda/install/).
 2. Create an environment called SNAP using the instructions in [this video](https://www.youtube.com/watch?v=14YM1kKdgA8)
 
-### Step 2: Call Environment from Server
-1. Activate the environment:
+### Step 2: Activate the Environment from Server
    ```bash
    conda activate /path/to/conda/SNAP
-
-### Step 3: Run the Script in Python
+```
+### Step 3: Run the Script
    ```bash
-   python /path/to/C2RCC_v2_Server.py
-
+   python /path/to/C2RCC_Server.py
+```
 
 
