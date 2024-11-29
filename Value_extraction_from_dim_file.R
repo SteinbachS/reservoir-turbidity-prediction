@@ -10,11 +10,11 @@ library(stringr)
 
 # Set working directory and temporary directory
 rasterOptions(tmpdir = tempdir())  # Use a system temporary directory
-path <- "your/default/path/C2RCC"  # Default path for input files
+path <- "/path/C2RCC"  # Default path for input files
 setwd(path)
 
 # Read point locations
-loc <- vect("your/default/path/Points.shp") # Insert points for which the data should be extracted
+loc <- vect("/path/Points.shp") # Insert points for which the data should be extracted
 
 # Read Sentinel-2 images; corrected bands are stored in layers 9-14
 dlist <- dir(path, pattern = ".dim$", recursive = TRUE)
