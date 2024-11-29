@@ -6,9 +6,44 @@ s.steinbach@utwente.nl; stefanie.steinbach@rub.de
 
 This repository contains the code used for the paper titled "Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning." The provided script uses Python and specific packages installed in a Conda environment for processing and analysis. Credit for Python support to: Torben Dedring
 
+# Input Imagery and pre-processing
+
+Sentinel-2 1C imagery is downloaded from the [Copernicus Dataspace](https://dataspace.copernicus.eu/) and all bands resampled to 10 m spatial resolution and a spatial subset created in [ESA SNAP](https://step.esa.int/main/download/snap-download/). The 
+
 # Preparing Ancillary Data
 
-C2RCC can use default configuration for the retrieval of Inherent Optical Properties (IOPs) or select them from ancillary data
+C2RCC can use default configuration for the retrieval of Inherent Optical Properties (IOPs) or select them from ancillary data. Here, we used ancillary data; NCEP-NCAR for temperature (converted to °C) and surface level pressure, CHIRPS for rainfall (mm), TOMS for ozone (DU), and the SRTM DEM for elevation (masl), all available in the [Google Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets). For each Sentinel-2 image file, a CSV file is created with the respective information from the ancillary data, salinity set to 0.0001 (minimum value which is assumed for freshwater), and the other parameters set as desired. The CSV file is named according to the respective Sentinel-2 image file, e.g., Subset_S2A_MSIL1C_20230108T074311_N0509_R092_T37MBV_20230108T092516_resampled.csv. Parameter retrieval and naming can be automated in R using this code:
+
+| Parameter                  | Value         |
+|----------------------------|---------------|
+| salinity                  | 1e-04         |
+| temperature               | 25.1624798    |
+| ozone                     | 260.4819619   |
+| press                     | 1010.258063   |
+| elevation                 | 1791          |
+| TSMfac                    | 0.66          |
+| TSMexp                    | 1.13          |
+| CHLexp                    | 1.04          |
+| CHLfac                    | 21            |
+| thresholdRtosaOOS         | 0.05          |
+| thresholdAcReflecOos      | 0.1           |
+| thresholdCloudTDown865    | 0.955         |
+| outputAsRrs               | false         |
+| deriveRwFromPathAndTransmittance | false   |
+| outputRtoa                | false         |
+| outputRtosaGc             | false         |
+| outputRtosaGcAann         | false         |
+| outputRpath               | false         |
+| outputTdown               | false         |
+| outputTup                 | false         |
+| outputAcReflectance       | false         |
+| outputRhown               | true          |
+| outputOos                 | false         |
+| outputKd                  | true          |
+| outputUncertainties       | true          |
+| netSet                    | C2X-COMPLEX-Nets |
+
+Move all image and CSV files to a server folder for subsequent automatic processing.
 
 # Run C2RCC on Server
 
