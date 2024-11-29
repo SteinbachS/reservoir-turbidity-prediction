@@ -4,7 +4,7 @@ Workflow and code for predicting turbidity dynamics in small reservoirs in centr
 Stefanie Steinbach  
 s.steinbach@utwente.nl; stefanie.steinbach@rub.de
 
-This repository contains the code used for the paper titled "Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning." The provided script uses Python and specific packages installed in a Conda environment for processing and analysis. Credit for Python support to: Torben Dedring
+This repository contains the workflow and main code scripts used for the paper titled "Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning." The provided scripts use R for ancillary data processing, Python and specific packages installed in a Conda environment for turbidity modelling, and R for machine learning-based predictor selection. Credit for Python support: Torben Dedring
 
 # Input imagery and pre-processing
 
