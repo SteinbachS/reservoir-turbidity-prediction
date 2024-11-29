@@ -6,13 +6,13 @@ s.steinbach@utwente.nl; stefanie.steinbach@rub.de
 
 This repository contains the code used for the paper titled "Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning." The provided script uses Python and specific packages installed in a Conda environment for processing and analysis. Credit for Python support to: Torben Dedring
 
-# Input Imagery and pre-processing
+# Input imagery and pre-processing
 
 Sentinel-2 1C imagery is downloaded from the [Copernicus Dataspace](https://dataspace.copernicus.eu/) and all bands resampled to 10 m spatial resolution and a spatial subset created in [ESA SNAP](https://step.esa.int/main/download/snap-download/). The 
 
-# Preparing Ancillary Data
+# Prepare ancillary data
 
-C2RCC can use default configuration for the retrieval of Inherent Optical Properties (IOPs) or select them from ancillary data. Here, we used ancillary data; NCEP-NCAR for temperature (converted to °C) and surface level pressure, CHIRPS for rainfall (mm), TOMS for ozone (DU), and the SRTM DEM for elevation (masl), all available in the [Google Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets). For each Sentinel-2 image file, a CSV file is created with the respective information from the ancillary data, salinity set to 0.0001 (minimum value which is assumed for freshwater), and the other parameters set as desired. The CSV file is named according to the respective Sentinel-2 image file, e.g., Subset_S2A_MSIL1C_20230108T074311_N0509_R092_T37MBV_20230108T092516_resampled.csv. Parameter retrieval and naming can be automated in R using this code:
+C2RCC can use default configuration for the retrieval of Inherent Optical Properties (IOPs) or select them from ancillary data. Here, we used ancillary data; NCEP-NCAR for temperature (converted to °C) and surface level pressure, CHIRPS for rainfall (mm), TOMS for ozone (DU), and the SRTM DEM for elevation (masl), all available in the [Google Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets). For each Sentinel-2 image file, a CSV file is created with the respective information from the ancillary data, salinity set to 0.0001 (minimum value which is assumed for freshwater), and the other parameters set as desired. The CSV file is named according to the respective Sentinel-2 image file, e.g., Subset_S2A_MSIL1C_20230108T074311_N0509_R092_T37MBV_20230108T092516_resampled.csv. Parameter retrieval and naming can be automated in R using [C2RCC_Ancillary_data_table_creation.R](C2RCC_Ancillary_data_table_creation.R).
 
 | Parameter                  | Value         |
 |----------------------------|---------------|
@@ -45,7 +45,7 @@ C2RCC can use default configuration for the retrieval of Inherent Optical Proper
 
 Move all image and CSV files to a server folder for subsequent automatic processing.
 
-# Run C2RCC on Server
+# Run C2RCC on server
 
 ### Software and Tools
 1. **Python**: Version 3.6.13 (managed using [Anaconda](https://www.anaconda.com/)).
@@ -55,21 +55,22 @@ Move all image and CSV files to a server folder for subsequent automatic process
 ### Dependencies
 The required Python libraries are installed via the Conda environment (see below).
 
-### Step 1: Configure the Conda Environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
+### Step 1: Configure the conda environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
 1. Install Anaconda, c.f. [here](https://docs.anaconda.com/anaconda/install/).
 2. Create an environment called SNAP using the instructions in [this video](https://www.youtube.com/watch?v=14YM1kKdgA8)
 
-### Step 2: Activate the Environment from Server
+### Step 2: Activate the environment from server
    ```bash
    conda activate /path/to/conda/SNAP
 ```
-### Step 3: Run the Script
+### Step 3: Run the script
    ```bash
    python /path/to/C2RCC_Server.py
 ```
 
-### Step 4: Extract Values for AOIs
-Once the btot files are created, they can be moved to a local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format.
+### Step 4: Extract values for AOIs
+Once the btot files are created, they can be moved to a local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in this script: 
+
 
 
 # Apply Machine Learning to Model Turbidity Outcomes
@@ -94,3 +95,4 @@ The required Python libraries are installed via the Conda environment (see below
    ```bash
    python /path/to/C2RCC_Server.py
 ```
+
