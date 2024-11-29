@@ -69,23 +69,14 @@ The required Python libraries are installed via the Conda environment (see below
    python /path/to/C2RCC_Server.py
 ```
 
-# Extract values for AOIs and add predictor data
+# Extract values for AOIs
 Once the btot files are created, they can be moved to the local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in the script [Value_extraction_from_dim_file.R](Value_extraction_from_dim_file.R). This script writes the raw values to CSV file. For the analysis conducted in the study, monthly and overall averages were used which can be created based on the raw dataframe, if needed. Requirements, such as a minimum number of valid observations per month or period can also be defined.
 
-Predictors are added to the dataframe. We used meteorological, land cover, land management, topographic predictors; for details, please refer to the publication.
+# Add predictor data
 
-# Apply Machine Learning to Model Turbidity Outcomes
+Predictors are added to the dataframe. We used meteorological, land cover, land management, and topographic predictors. All predictors used here can be created and downloaded in the Google Earth Engine. Wetland Use Intensity as a land management predictor can be calculated in the Google Earth Engine following the scripts published in Steinbach, S., Hentschel, E., Hentze, K., Rienow, A., Umulisa, V., Zwart, S.J., Nelson, A., 2023. Automatization and evaluation of a remote sensing-based indicator for wetland health assessment in East Africa on national and local scales. Ecological Informatics 75, 102032. (https://doi.org/10.1016/j.ecoinf.2023.102032)[https://doi.org/10.1016/j.ecoinf.2023.102032].
 
-### Step 1: Configure the Conda Environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
-1. Install Anaconda, c.f. [here](https://docs.anaconda.com/anaconda/install/).
-2. Create an environment called SNAP using the instructions in [this video](https://www.youtube.com/watch?v=14YM1kKdgA8)
+# Apply machine learning to model turbidity outcomes
 
-### Step 2: Activate the Environment from Server
-   ```bash
-   conda activate /path/to/conda/SNAP
-```
-### Step 3: Run the Script
-   ```bash
-   python /path/to/C2RCC_Server.py
-```
+Use Random Forest and XGBoost, recursive feature selection, and hyperparameter tuning to optimize models and extract predictor importances using [ML_Turbidity_prediction.R](ML_Turbidity_prediction.R).
 
