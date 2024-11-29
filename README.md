@@ -74,7 +74,7 @@ Once the btot files are created, they can be moved to the local machine and the 
 
 # Add predictor data
 
-Predictors are added to the dataframe. We used meteorological, land cover, land management, and topographic predictors. All predictors used here can be created and downloaded in the Google Earth Engine. Wetland Use Intensity as a land management predictor can be calculated in the Google Earth Engine following the scripts published in Steinbach, S., Hentschel, E., Hentze, K., Rienow, A., Umulisa, V., Zwart, S.J., Nelson, A., 2023. Automatization and evaluation of a remote sensing-based indicator for wetland health assessment in East Africa on national and local scales. Ecological Informatics 75, 102032. (https://doi.org/10.1016/j.ecoinf.2023.102032)[https://doi.org/10.1016/j.ecoinf.2023.102032].
+Predictors are added to the dataframe. We used meteorological, land cover, land management, surface water, and topographic predictors. All predictors used here can be created and downloaded in the Google Earth Engine (refer to the article named above). Wetland Use Intensity as a land management predictor can be calculated in the Google Earth Engine following the scripts published in Steinbach, S., Hentschel, E., Hentze, K., Rienow, A., Umulisa, V., Zwart, S.J., Nelson, A., 2023. Automatization and evaluation of a remote sensing-based indicator for wetland health assessment in East Africa on national and local scales. Ecological Informatics 75, 102032. [https://doi.org/10.1016/j.ecoinf.2023.102032](https://doi.org/10.1016/j.ecoinf.2023.102032).
 
 # Apply machine learning to model turbidity outcomes
 
