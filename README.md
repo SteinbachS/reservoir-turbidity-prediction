@@ -1,5 +1,5 @@
 # reservoir-turbidity-prediction
-Code for predicting turbidity dynamics in small reservoirs in central Kenya using Sentinel-2 1C data and machine learning.
+Code for predicting turbidity dynamics in small reservoirs in central Kenya using Sentinel-2 1C data and machine learning as done in Steinbach, S., Bartels, A., Rienow, A., Thiong'o Kuria, B., Zwart S. & Nelson, A. Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning. Int. J. Appl. Earth Obs. Geoinf.
 
 Stefanie Steinbach  
 s.steinbach@utwente.nl; stefanie.steinbach@rub.de
@@ -69,7 +69,7 @@ The required Python libraries are installed via the Conda environment (see below
 ```
 
 ### Step 4: Extract values for AOIs
-Once the btot files are created, they can be moved to a local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in this script: 
+Once the btot files are created, they can be moved to a local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in this R script: [C2RCC_Ancillary_data_table_creation.R](C2RCC_Ancillary_data_table_creation.R)
 
 
 
