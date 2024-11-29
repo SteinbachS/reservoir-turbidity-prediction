@@ -55,9 +55,10 @@ Move all image and CSV files to a server folder for subsequent automatic process
 ### Dependencies
 The required Python libraries are installed via the Conda environment (see below).
 
-### Step 1: Configure the conda environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
+### Step 1: Configure the Conda environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
 1. Install Anaconda, c.f. [here](https://docs.anaconda.com/anaconda/install/).
 2. Create an environment called SNAP using the instructions in [this video](https://www.youtube.com/watch?v=14YM1kKdgA8)
+3. Transfer the Python script to server [C2RCC_Server.py](C2RCC_Server.py)
 
 ### Step 2: Activate the environment from server
    ```bash
@@ -68,20 +69,12 @@ The required Python libraries are installed via the Conda environment (see below
    python /path/to/C2RCC_Server.py
 ```
 
-### Step 4: Extract values for AOIs
-Once the btot files are created, they can be moved to a local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in this R script: [C2RCC_Ancillary_data_table_creation.R](C2RCC_Ancillary_data_table_creation.R)
+# Extract values for AOIs and add predictor data
+Once the btot files are created, they can be moved to the local machine and the values for the respective AOI(s) extracted, e.g., using a shapefile in R, and saved in table format as shown in the script [Value_extraction_from_dim_file.R](Value_extraction_from_dim_file.R). This script writes the raw values to CSV file. For the analysis conducted in the study, monthly and overall averages were used which can be created based on the raw dataframe, if needed. Requirements, such as a minimum number of valid observations per month or period can also be defined.
 
-
+Predictors are added to the dataframe. We used meteorological, land cover, land management, topographic predictors; for details, please refer to the publication.
 
 # Apply Machine Learning to Model Turbidity Outcomes
-
-### Software and Tools
-1. **Python**: Version 3.6.13 (managed using [Anaconda](https://www.anaconda.com/)).
-2. **Conda environment**: The required environment can be created and activated using Anaconda.
-3. **Remote access software**: To run the script on a server, a we used [MobaXTerm](https://mobaxterm.mobatek.net/).
-
-### Dependencies
-The required Python libraries are installed via the Conda environment (see below).
 
 ### Step 1: Configure the Conda Environment with [ESA snappy](https://github.com/senbox-org/esa-snappy)
 1. Install Anaconda, c.f. [here](https://docs.anaconda.com/anaconda/install/).
