@@ -1,5 +1,5 @@
 # reservoir-turbidity-prediction
-Code for predicting turbidity dynamics in small reservoirs in central Kenya using Sentinel-2 1C data and machine learning as done in Steinbach, S., Bartels, A., Rienow, A., Thiong'o Kuria, B., Zwart S. & Nelson, A. Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning. Int. J. Appl. Earth Obs. Geoinf.
+Workflow and code for predicting turbidity dynamics in small reservoirs in central Kenya using Sentinel-2 1C data and machine learning as done in Steinbach, S., Bartels, A., Rienow, A., Thiong'o Kuria, B., Zwart S. & Nelson, A. Predicting turbidity dynamics in small reservoirs in central Kenya using remote sensing and machine learning. Int. J. Appl. Earth Obs. Geoinf.
 
 Stefanie Steinbach  
 s.steinbach@utwente.nl; stefanie.steinbach@rub.de
